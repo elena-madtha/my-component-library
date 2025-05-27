@@ -113,3 +113,4 @@ You need to set the `FIGMA_URL` and `FIGMA_TOKEN`, for example in an `.env` file
 The provided configuration at `figmagic.json` should be a good starting point.
 
 _Remember to have your `overwrite` object correctly set up if you expect to modify the generated files! The provided config will overwrite anything except the React and Styled Components files._
+Updated for Chromatic test
