@@ -1,0 +1,61 @@
+{
+  "name": "@mikaelvesavuori/acmecorp-potted-plants-components",
+  "version": "0.0.14",
+  "description": "React component library with components generated and/or composed with Figmagic. Made for The newline Guide to React Component Design Systems with Figmagic.",
+  "keywords": [
+    "acmecorp",
+    "component-library",
+    "figmagic",
+    "newline",
+    "course-material"
+  ],
+  "author": "Mikael Vesavuori",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && npx webpack",
+    "init": "npx sb init -f && npm install --force",
+    "prepublishOnly": "npm run figmagic && npm run build",
+    "figmagic:init": "npx figmagic init",
+    "figmagic": "npx figmagic",
+    "start": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006"
+  },
+  "resolutions": {
+    "react": "17"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@babel/core": "7.17.8",
+    "@babel/preset-env": "7.16.11",
+    "@babel/preset-react": "7.16.7",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-webpack4": "^6.5.9",
+    "@storybook/manager-webpack4": "^6.5.9",
+    "@storybook/react": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "8.2.4",
+    "babel-plugin-module-resolver": "4.1.0",
+    "chromatic": "^5.10.2",
+    "eslint": "8.11.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-storybook": "^0.5.7",
+    "figmagic": "^4.3.5",
+    "file-loader": "6.2.0",
+    "prettier": "2.6.0",
+    "webpack": "4",
+    "webpack-cli": "4.9.2",
+    "webpack-dev-server": "3"
+  }
+}

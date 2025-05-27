@@ -1,0 +1,19 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+
+import Card from './Card';
+
+import CardDescription from './Card.description.md';
+
+<Meta title="elements/Card" component={Card} argTypes={{}} />
+
+<CardDescription />
+
+<Canvas>
+  <Story name="Card" height="400px">
+    {(args) => <Card {...args}>Card contents here</Card>}
+  </Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={Card} />
