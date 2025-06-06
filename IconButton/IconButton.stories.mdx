@@ -1,0 +1,45 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+
+import IconButton from './IconButton';
+import IconButtonDescription from './IconButton.description.md';
+
+import { addItemToCart, removeItemFromCart } from '../../utils.js';
+
+<IconButtonDescription />
+
+<Meta
+  title="components/IconButton"
+  component={IconButton}
+  argTypes={{
+    onClickEvent: {
+      table: {
+        disable: true
+      }
+    }
+  }}
+/>
+
+<Canvas>
+  <Story
+    name="Icon Button Minus"
+    args={{
+      minus: true,
+      onClickEvent: removeItemFromCart
+    }}
+  >
+    {(args) => <IconButton {...args} />}
+  </Story>
+  <Story
+    name="Icon Button Plus"
+    args={{
+      plus: true,
+      onClickEvent: removeItemFromCart
+    }}
+  >
+    {(args) => <IconButton {...args} />}
+  </Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={IconButton} />

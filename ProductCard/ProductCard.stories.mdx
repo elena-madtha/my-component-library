@@ -1,0 +1,75 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+
+import ProductCard from './ProductCard';
+import ProductCardDescription from './ProductCard.description.md';
+
+<ProductCardDescription />
+
+import { addItemToCart } from '../../utils.js';
+
+<Meta
+  title="components/ProductCard"
+  component={ProductCard}
+  argTypes={{
+    addItemToCart: {
+      table: {
+        disable: true
+      }
+    }
+  }}
+/>
+
+<Canvas>
+  <Story name="Product Card Single">
+    {(args) => (
+      <ProductCard
+        imageUrl="https://images.unsplash.com/photo-1508013861974-9f6347163ebe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1655&q=80"
+        heading="Some product."
+        description="This is a fine flower grown from quality seeds in a garden near you. Price includes pot and saucer."
+        price="125"
+        addItemToCart={addItemToCart}
+        {...args}
+      />
+    )}
+  </Story>
+  <Story name="Product Card Multiple">
+    {(args) => (
+      <div
+        style={{
+          display: 'flex',
+          flexFlow: 'wrap',
+          justifyContent: 'space-between'
+        }}
+      >
+        <ProductCard
+          imageUrl="https://images.unsplash.com/photo-1508013861974-9f6347163ebe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=30"
+          heading="Monstera"
+          description="This is a fine flower grown from quality seeds in a garden near you. Price includes pot and saucer."
+          price="125"
+          addItemToCart={addItemToCart}
+          {...args}
+        />
+        <ProductCard
+          imageUrl="https://images.unsplash.com/photo-1592221069981-9b83d4a73125?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=30"
+          heading="Lush big leaf"
+          description="This is a fine flower grown from quality seeds in a garden near you. Price includes pot and saucer."
+          price="150"
+          addItemToCart={addItemToCart}
+          {...args}
+        />
+        <ProductCard
+          imageUrl="https://images.unsplash.com/photo-1561641250-c06551cf3b02?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=30"
+          heading="Exclusive bonsai"
+          description="This is a fine flower grown from quality seeds in a garden near you. Price includes pot and saucer."
+          price="250"
+          addItemToCart={addItemToCart}
+          {...args}
+        />
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={ProductCard} />

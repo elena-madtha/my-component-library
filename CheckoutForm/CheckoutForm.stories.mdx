@@ -1,0 +1,33 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+
+import CheckoutForm from './CheckoutForm';
+import CheckoutFormDescription from './CheckoutForm.description.md';
+
+<CheckoutFormDescription />
+
+<Meta
+  title="components/CheckoutForm"
+  component={CheckoutForm}
+  argTypes={{
+    submitOrderFunction: {
+      table: {
+        disable: true
+      }
+    }
+  }}
+/>
+
+<Canvas>
+  <Story
+    name="Checkout Form"
+    args={{
+      submitOrderFunction: () => alert('Placed order!')
+    }}
+  >
+    {(args) => <CheckoutForm {...args} />}
+  </Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={CheckoutForm} />

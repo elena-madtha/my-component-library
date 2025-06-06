@@ -1,0 +1,65 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+
+import CheckoutItem from './CheckoutItem';
+import CheckoutItemDescription from './CheckoutItem.description.md';
+
+import { addItemToCart, removeItemFromCart } from '../../utils.js';
+
+<CheckoutItemDescription />
+
+<Meta
+  title="components/CheckoutItem"
+  component={CheckoutItem}
+  argTypes={{
+    addItemToCart: {
+      table: {
+        disable: true
+      }
+    },
+    removeItemFromCart: {
+      table: {
+        disable: true
+      }
+    }
+  }}
+/>
+
+<Canvas>
+  <Story
+    name="CheckoutItem Single"
+    args={{
+      name: 'Exclusive Bonsai',
+      count: 1,
+      price: 100,
+      imageUrl:
+        'https://images.unsplash.com/photo-1561641250-c06551cf3b02?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=30',
+      addItemToCart: addItemToCart,
+      removeItemFromCart: removeItemFromCart
+    }}
+  >
+    {(args) => <CheckoutItem {...args} />}
+  </Story>
+  <Story
+    name="CheckoutItem Multiple"
+    args={{
+      name: 'Monstera',
+      count: 3,
+      price: 250,
+      imageUrl:
+        'https://images.unsplash.com/photo-1508013861974-9f6347163ebe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=30',
+      addItemToCart: addItemToCart,
+      removeItemFromCart: removeItemFromCart
+    }}
+  >
+    {(args) => (
+      <>
+        <CheckoutItem {...args} />
+        <CheckoutItem {...args} />
+      </>
+    )}
+  </Story>
+</Canvas>
+
+## ArgsTable
+
+<ArgsTable of={CheckoutItem} />
