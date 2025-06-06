@@ -21,7 +21,8 @@
     "figmagic": "npx figmagic",
     "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "chromatic": "npx chromatic --project-token=chpt_6237d8fc2598465"
   },
   "resolutions": {
     "react": "17"
@@ -51,11 +52,14 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-storybook": "^0.5.7",
-    "figmagic": "^4.3.5",
+    "figmagic": "^4.6.0",
     "file-loader": "6.2.0",
     "prettier": "2.6.0",
     "webpack": "4",
     "webpack-cli": "4.9.2",
     "webpack-dev-server": "3"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0"
   }
 }
