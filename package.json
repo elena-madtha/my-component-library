@@ -61,5 +61,13 @@
   },
   "dependencies": {
     "dotenv": "^16.5.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elena-madtha/my-component-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/elena-madtha/my-component-library/issues"
+  },
+  "homepage": "https://github.com/elena-madtha/my-component-library#readme"
 }
